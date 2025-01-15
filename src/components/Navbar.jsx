@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaYoutube, FaTwitter, FaInstagram, FaLinkedin, FaTwitch, FaRss } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 const Navbar = () => {
     return (
         <header className="bg-gray-900 text-white">
@@ -22,44 +23,43 @@ const Navbar = () => {
                     {/* Navigation Links */}
                     <ul className="flex flex-wrap items-center space-x-6 text-sm font-sans uppercase">
                         <li className="cursor-pointer">
-                            <a
+                            {/* <a
                                 href="#home"
                                 className="hover:text-orange-600 hover:underline hover:decoration-2 hover:decoration-orange-500"
                             >
                                 Home
-                            </a>
+                            </a> */}
+                            <Link to="/" className="hover:text-orange-600 hover:underline hover:decoration-2 hover:decoration-orange-500">
+                            Home
+                            </Link>
+                            
+                            {/* <Link to="/" className="flex items-center gap-1 hover:text-gray-300">
+                                <FaHome className="h-5 w-5" /> Home
+                            </Link> */}
                         </li>
                         <li className="cursor-pointer">
-                            <a
-                                href="#features"
-                                className="hover:text-orange-600 hover:underline hover:decoration-2 hover:decoration-orange-500"
-                            >
-                                Features
-                            </a>
+                           
+                            <Link to="/all-reviews" className="hover:text-orange-600 hover:underline hover:decoration-2 hover:decoration-orange-500">
+                            All Reviews
+                            </Link>
                         </li>
                         <li className="cursor-pointer">
-                            <a
-                                href="#news"
-                                className="hover:text-orange-600 hover:underline hover:decoration-2 hover:decoration-orange-500"
-                            >
-                                News
-                            </a>
+                          
+                            <Link to="/add-review" className="hover:text-orange-600 hover:underline hover:decoration-2 hover:decoration-orange-500">
+                            Add Review
+                            </Link>
                         </li>
                         <li className="cursor-pointer">
-                            <a
-                                href="#reviews"
-                                className="hover:text-orange-600 hover:underline hover:decoration-2 hover:decoration-orange-500"
-                            >
-                                Reviews
-                            </a>
+                          
+                            <Link to="/" className="hover:text-orange-600 hover:underline hover:decoration-2 hover:decoration-orange-500">
+                            My Reviews
+                            </Link>
                         </li>
                         <li className="cursor-pointer">
-                            <a
-                                href="#videos"
-                                className="hover:text-orange-600 hover:underline hover:decoration-2 hover:decoration-orange-500"
-                            >
-                                Videos
-                            </a>
+                           
+                            <Link to="/" className="hover:text-orange-600 hover:underline hover:decoration-2 hover:decoration-orange-500">
+                            Game Watch List
+                            </Link>
                         </li>
                         <li className="cursor-pointer">
                             <a

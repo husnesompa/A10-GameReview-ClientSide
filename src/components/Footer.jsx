@@ -10,49 +10,52 @@ const Footer = () => {
                 {/* Main Footer Section */}
                 <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
                     {/* Logo */}
-                    <div className="text-4xl font-bold tracking-wide text-center md:text-left mb-4 md:mb-0">
+                    <div className="text-2xl sm:text-4xl font-bold tracking-wide text-center md:text-left mb-4 md:mb-0">
                         8-bit-Opinion
                     </div>
 
                     {/* Stay Connected + Icons */}
-                    <div className="flex items-center space-x-4 md:ml-auto">
+                    <div className="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-6">
+                        <p className="text-sm uppercase font-semibold text-center md:text-left">
+                            Stay Connected
+                        </p>
                         {/* Social Media Icons */}
-                        <div className="flex space-x-4">
+                        <div className="flex justify-center md:justify-start space-x-2 sm:space-x-4">
                             <a href="#" className="hover:text-gray-400">
-                                <FaFacebook />
+                                <FaFacebook size={20} />
                             </a>
                             <a href="#" className="hover:text-gray-400">
-                                <FaTwitter />
+                                <FaTwitter size={20} />
                             </a>
                             <a href="#" className="hover:text-gray-400">
-                                <FaYoutube />
+                                <FaYoutube size={20} />
                             </a>
                             <a href="#" className="hover:text-gray-400">
-                                <FaInstagram />
+                                <FaInstagram size={20} />
                             </a>
                             <a href="#" className="hover:text-gray-400">
-                                <FaLinkedin />
+                                <FaLinkedin size={20} />
                             </a>
                             <a href="#" className="hover:text-gray-400">
-                                <FaTwitch />
+                                <FaTwitch size={20} />
                             </a>
                             <a href="#" className="hover:text-gray-400">
-                                <FaRss />
+                                <FaRss size={20} />
                             </a>
-                            <p className="text-sm uppercase font-semibold">Stay Connected</p>
                         </div>
                     </div>
                 </div>
+
                 {/* Bottom Footer Section */}
                 <div className="bg-gray-800 py-4">
                     <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
                         {/* Left: Copyright */}
-                        <div className="text-sm text-gray-400">
+                        <div className="text-sm text-gray-400 text-center md:text-left mb-2 md:mb-0">
                             Copyright 2025@Husna_Sompa$$8-bit-opinion Inc. - All Rights Reserved.
                         </div>
 
                         {/* Right: Navbar Links */}
-                        <div className="flex space-x-4 text-sm text-gray-400">
+                        <div className="flex justify-center md:justify-end space-x-4 text-sm text-gray-400">
                             <a
                                 href="#top"
                                 className="text-sm text-gray-400 hover:text-white uppercase tracking-wide"
@@ -64,6 +67,7 @@ const Footer = () => {
                 </div>
             </footer>
         </div>
+
     );
 };
 
