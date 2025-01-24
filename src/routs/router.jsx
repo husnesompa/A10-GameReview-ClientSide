@@ -9,6 +9,8 @@ import AuthLayout from '../layouts/AuthLayout';
 import LogIn from '../pages/LogIn';
 import Register from '../pages/Register';
 import ErrorPage from '../pages/ErrorPage';
+import MyReviews from '../pages/MyReviews';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
     {
@@ -21,14 +23,32 @@ const router = createBrowserRouter([
             },
             {
                 path: "/add-review",
-                element: <AddReview />,
+
+                element: (<PrivateRoute><AddReview></AddReview></PrivateRoute>),
+
 
             },
             {
                 path: "/all-reviews",
                 element: <AllReviews />
 
-            }
+            },
+            {
+                path: "/register",
+                element: <Register></Register>
+
+            },
+            {
+                path: "/login",
+                element: <LogIn />
+            },
+            {
+                path: "/my-reviews",
+                element: (<PrivateRoute>
+                    <MyReviews />
+                </PrivateRoute>),
+
+            },
 
         ]
     },
