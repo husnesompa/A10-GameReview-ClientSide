@@ -7,40 +7,36 @@ const Register = () => {
   const { createNewUser } = useContext(AuthContext);
 
   const handleRegister = e => {
-    
+
     e.preventDefault();
 
     const name = e.target.name.value;
-        const email = e.target.email.value;
-        const photo = e.target.photo.value;
-        const password = e.target.password.value;
-        console.log("Allah", name, email, photo, password);
-        createNewUser(email, password)
-            .then(result => {
-                // const user = result.user;
-                // setUser(user);
-                // e.target.reset();
-                // navigate("/");
-                console.log(result.user);
-                const createAt = result?.user?.metadata?.creationTime;
-                const newUser = {name, email, createAt};
-                //save new user info to the Database 
-                fetch('http://localhost:5000/users',{
-                  method: 'POST',
-                  headers: {
-                    'content-type':'application/json'
-                  },
-                  body: JSON.stringify(newUser)
-                })
-                .then(res => res.json())
-                .then(data =>{
-                  console.log('user created to db', data);
-                })
-            })
-            .catch((error) => {
-                // toast.error(`Error: ${error.message}`);
-                console.log(`Error: ${error.message}`);
-              });
+    const email = e.target.email.value;
+    const photo = e.target.photo.value;
+    const password = e.target.password.value;
+    console.log("Allah", name, email, photo, password);
+    createNewUser(email, password)
+      .then(result => {
+        console.log(result.user);
+        const createAt = result?.user?.metadata?.creationTime;
+        const newUser = { name, email, createAt };
+        //save new user info to the Database 
+        fetch('http://localhost:5000/users', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(newUser)
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log('user created to db', data);
+          })
+      })
+      .catch((error) => {
+        // toast.error(`Error: ${error.message}`);
+        console.log(`Error: ${error.message}`);
+      });
 
   }
   return (

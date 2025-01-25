@@ -17,92 +17,49 @@ const LogIn = () => {
     const password = e.target.password.value;
     console.log("Allah", email, password);
 
-    // signInUser(email, password)
-    //   .then(result => {
-    //     const user = result.user;
-    //     setUser(user);
-    //     console.log(user);
-    //     const lastSignInTime = result?.user?.metadata?.lastSignInTime;
-    //     const logInInfo = { email, lastSignInTime };
-
-    //     return fetch(`http://localhost:5000/users/`, {
-    //       method: 'PATCH',
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify(logInInfo),
-    //     });
-    //   })
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     console.log("Sign-in info:", data);
-
-    //     // Show SweetAlert notification
-    //     Swal.fire({
-    //       icon: 'success',
-    //       title: 'Login Successful!',
-    //       text: 'Welcome back! Redirecting you to the dashboard.',
-    //       timer: 2000, // Optional: Auto close after 2 seconds
-    //       timerProgressBar: true,
-    //       showConfirmButton: false,
-    //     });
-
-    //     // Redirect after SweetAlert
-    //     setTimeout(() => {
-    //       navigate(from, { replace: true });
-    //     }, 2000); // Delay redirection to allow SweetAlert to show
-    //   })
-    //   .catch(error => {
-    //     console.error(`Error: ${error.message}`);
-    //     Swal.fire({
-    //       icon: 'error',
-    //       title: 'Login Failed!',
-    //       text: `Error: ${error.message}`,
-    //     });
-    //   });
     signInUser(email, password)
-  .then(result => {
-    const user = result.user;
-    const lastSignInTime = user?.metadata?.lastSignInTime;
-    const logInInfo = { email, lastSignInTime };
+      .then(result => {
+        const user = result.user;
+        const lastSignInTime = user?.metadata?.lastSignInTime;
+        const logInInfo = { email, lastSignInTime };
 
-    return fetch(`http://localhost:5000/users/`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(logInInfo),
-    }).then(res => {
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
-      return res.json();
-    }).then(data => {
-      console.log("Sign-in info:", data);
-      setUser(user);
-      return user; // Return user for chaining
-    });
-  })
-  .then(user => {
-    Swal.fire({
-      icon: 'success',
-      title: 'Login Successful!',
-      text: 'Welcome back! Redirecting you to the dashboard.',
-      timer: 2000,
-      timerProgressBar: true,
-      showConfirmButton: false,
-    }).then(() => {
-      navigate(from, { replace: true });
-    });
-  })
-  .catch(error => {
-    console.error(`Error: ${error.message}`);
-    Swal.fire({
-      icon: 'error',
-      title: 'Login Failed!',
-      text: `Error: ${error.message}`,
-    });
-  });
+        return fetch(`http://localhost:5000/users/`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(logInInfo),
+        }).then(res => {
+          if (!res.ok) {
+            throw new Error(`HTTP error! Status: ${res.status}`);
+          }
+          return res.json();
+        }).then(data => {
+          console.log("Sign-in info:", data);
+          setUser(user);
+          return user; // Return user for chaining
+        });
+      })
+      .then(user => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Login Successful!',
+          text: 'Welcome back! Redirecting you to the dashboard.',
+          timer: 2000,
+          timerProgressBar: true,
+          showConfirmButton: false,
+        }).then(() => {
+          navigate(from, { replace: true });
+        });
+      })
+      .catch(error => {
+        console.error(`Error: ${error.message}`);
+        Swal.fire({
+          icon: 'error',
+          title: 'Login Failed!',
+          text: `Error: ${error.message}`,
+        });
+      });
 
 
 

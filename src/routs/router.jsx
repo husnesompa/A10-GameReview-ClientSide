@@ -11,6 +11,7 @@ import Register from '../pages/Register';
 import ErrorPage from '../pages/ErrorPage';
 import MyReviews from '../pages/MyReviews';
 import PrivateRoute from './PrivateRoute';
+import ReviewDetails from '../pages/reviewDetails';
 
 const router = createBrowserRouter([
     {
@@ -25,11 +26,14 @@ const router = createBrowserRouter([
                 path: "/add-review",
 
                 element: (<PrivateRoute><AddReview></AddReview></PrivateRoute>),
-
+            },
+            {
+                path: "/review/:id",
+                element: <ReviewDetails />
 
             },
             {
-                path: "/all-reviews",
+                path: "/reviews",
                 element: <AllReviews />
 
             },
@@ -50,20 +54,6 @@ const router = createBrowserRouter([
 
             },
 
-        ]
-    },
-    {
-        path: "/auth",
-        element: <AuthLayout />,
-        children: [
-            {
-                path: "/auth/login",
-                element: <LogIn />
-            },
-            {
-                path: "/auth/register",
-                element: <Register />
-            }
         ]
     },
     {
