@@ -17,7 +17,7 @@ const Navbar = () => {
 
                 {/* Banner Spot */}
                 <div className="mt-4 md:mt-0">
-                    <div className="bg-gray-700 w-[728px] h-[90px] flex items-center justify-center text-sm text-gray-400">
+                    <div className="bg-gray-700 w-[228px] h-[90px] md:w-[728px] flex items-center justify-center text-sm text-gray-400">
                         <img alt="Banner" />
                     </div>
                 </div>
@@ -55,7 +55,7 @@ const Navbar = () => {
                         <>
                             <li><Link to="/add-review" className="hover:text-orange-600">Add Review</Link></li>
                             <li><Link to="/my-reviews" className="hover:text-orange-600">My Reviews</Link></li>
-                            <li><Link to="/game-watchList" className="hover:text-orange-600">Game Watch List</Link></li>
+                            <li><Link to="/my-WatchList" className="hover:text-orange-600">Game Watch List</Link></li>
                         </>
                         {/* )} */}
                         <li><Link to="#shop" className="hover:text-orange-600">Shop</Link></li>
