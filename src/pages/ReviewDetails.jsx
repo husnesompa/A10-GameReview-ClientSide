@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../Providers/AuthProvider";
+import Spinner from "../components/Spinner";
 
 
 const ReviewDetails = () => {
@@ -64,7 +65,7 @@ const ReviewDetails = () => {
     };
 
     if (loading) {
-        return <div className="text-center mt-10">Loading review...</div>;
+        return <Spinner/> ;
     }
 
     if (!review) {

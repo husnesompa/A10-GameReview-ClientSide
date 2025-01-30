@@ -46,7 +46,7 @@ const UpdateReviewModal = ({ review, onClose, onUpdate }) => {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
             <div className="bg-white p-6 rounded-lg w-full max-w-lg">
-                <h2 className="text-xl font-bold text-orange-500 mb-4">Update Review</h2>
+                <h2 className="text-xl font-bold text-red-600 mb-4">Update Review</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <label className="block font-medium">Game Title</label>
@@ -123,7 +123,7 @@ const UpdateReviewModal = ({ review, onClose, onUpdate }) => {
                         </button>
                         <button
                             type="submit"
-                            className="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600"
+                            className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-600"
                         >
                             Update
                         </button>

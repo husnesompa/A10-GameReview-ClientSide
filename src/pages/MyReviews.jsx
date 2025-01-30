@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { AuthContext } from "../Providers/AuthProvider";
 import UpdateReviewModal from "../components/UpdateReviewModal";
+import Spinner from "../components/Spinner";
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext);
@@ -91,7 +92,7 @@ const MyReviews = () => {
 
 
     if (loading) {
-        return <div className="text-center mt-10">Loading reviews...</div>;
+        return <Spinner/>;
     }
 
     if (!myReviews.length) {
@@ -100,7 +101,7 @@ const MyReviews = () => {
 
     return (
         <div className="p-6 bg-gray-100 min-h-screen">
-            <h1 className="text-2xl font-bold text-orange-500 mb-4 text-center sm:text-left">
+            <h1 className="text-2xl font-bold text-red-600 mb-4 text-center sm:text-left">
                 My Reviews
             </h1>
             <div className="rounded-lg shadow-lg bg-white overflow-x-auto">
@@ -134,7 +135,7 @@ const MyReviews = () => {
                                     <td className="p-2 border flex flex-col sm:flex-row gap-2 justify-center">
                                         {/* Buttons stack vertically on smaller screens */}
                                         <button
-                                            className="bg-orange-500 text-white px-3 py-1 rounded hover:bg-orange-600 text-xs sm:text-sm"
+                                            className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-600 text-xs sm:text-sm"
                                             onClick={() => handleUpdateClick(review._id)}
                                         >
                                             Update

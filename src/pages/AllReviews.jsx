@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Spinner from '../components/Spinner';
 
 const AllReviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -23,7 +24,7 @@ const AllReviews = () => {
     }, []);
 
     if (loading) {
-        return <div className="text-center mt-10">Loading reviews...</div>;
+        return <Spinner/>
     }
 
     return (

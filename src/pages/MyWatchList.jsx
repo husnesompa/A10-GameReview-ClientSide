@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+import Spinner from "../components/Spinner";
 
 
 const MyWatchList = () => {
@@ -32,7 +33,7 @@ const MyWatchList = () => {
   }, [user]);
 
   if (loading) {
-    return <div className="text-center mt-10">Loading your watchlist...</div>;
+    return <Spinner/> ;
   }
 
   if (!watchList.length) {
@@ -41,7 +42,7 @@ const MyWatchList = () => {
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold text-orange-500 mb-4 text-center sm:text-left">
+      <h1 className="text-2xl font-bold text-red-600 mb-4 text-center sm:text-left">
         My Watchlist
       </h1>
       <div className="rounded-lg shadow-lg bg-white overflow-x-auto">

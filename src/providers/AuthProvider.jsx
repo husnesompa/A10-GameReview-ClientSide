@@ -3,10 +3,17 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signOut,
-    onAuthStateChanged
+    onAuthStateChanged,
+    signInWithPopup,
+    GoogleAuthProvider
+    
 } from 'firebase/auth';
 import { auth } from '../firebase/firebase.init';
+import Spinner from '../components/Spinner';
 
+
+
+const googleProvider = new GoogleAuthProvider();
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
@@ -23,6 +30,18 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
+
+    const signInWithGoogle = async () => {
+        setLoading(true);
+        try {
+            const result = await signInWithPopup(auth, googleProvider); 
+            setUser(result.user);
+        } catch (error) {
+            console.error("Google Sign-In Error:", error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
     const logOut = () => {
         setLoading(true);
         return signOut(auth).then(() => {
@@ -48,10 +67,11 @@ const AuthProvider = ({ children }) => {
         createNewUser,
         signInUser,
         logOut,
+        signInWithGoogle,
     };
     return (
         <AuthContext.Provider value={userInfo}>
-            {loading ? <p>Loading...</p> : children}
+            {loading ? <Spinner/>: children}
         </AuthContext.Provider>
     );
 };

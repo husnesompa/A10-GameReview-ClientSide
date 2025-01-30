@@ -23,7 +23,7 @@ const HighestRatedGames = () => {
 
     return (
         <div className="container mx-auto px-4 py-6">
-            <h1 className="text-3xl font-bold text-orange-500 mb-6">
+            <h1 className="text-3xl font-bold text-red-600 mb-6">
                 Highest Rated Games
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -34,13 +34,13 @@ const HighestRatedGames = () => {
                     >
                         <h2 className="text-xl font-semibold mb-2">{game.gameTitle}</h2>
                         <p className="text-gray-600 mb-4">{game.reviewDescription}</p>
-                        <p className="text-orange-500 font-bold mb-4">
+                        <p className="text-red-600 font-bold mb-4">
                             Rating: {game.rating}
                         </p>
                         <Link
 
                             to={`/review/${game._id}`}
-                            className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600"
+                            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-600"
                         >
                             Explore Details
                         </Link>
