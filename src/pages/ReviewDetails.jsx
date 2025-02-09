@@ -12,7 +12,7 @@ const ReviewDetails = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/review/${id}`)
+        fetch(`https://a10-assignment-game-review-application-server-side.vercel.app/review/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 // console.log("Review ID from data:", id);
@@ -42,7 +42,7 @@ const ReviewDetails = () => {
             userName: user.name,
         };
 
-        fetch("http://localhost:5000/watchlist", {
+        fetch("https://a10-assignment-game-review-application-server-side.vercel.app/watchList", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
