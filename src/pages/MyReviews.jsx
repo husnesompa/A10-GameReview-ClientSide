@@ -92,7 +92,7 @@ const MyReviews = () => {
 
 
     if (loading) {
-        return <Spinner/>;
+        return <Spinner />;
     }
 
     if (!myReviews.length) {

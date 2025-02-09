@@ -76,7 +76,7 @@ const AddReview = () => {
                     <label className="block font-semibold">Rating</label>
                     <input
                         type="number"
-                        {...register("rating", { required: true, min: 1, max: 10 })}
+                        {...register("rating", { required: true, min: 1, max: 5 })}
                         placeholder="Enter rating (1-10)"
                         className="w-full border rounded p-2"
                     />

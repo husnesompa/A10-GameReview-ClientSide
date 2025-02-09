@@ -9,7 +9,7 @@ const MyWatchList = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch the user's watchlist
+    // Fetch the user's watchList
     if (user) {
       fetch(`http://localhost:5000/WatchList?email=${user.email}`, {
         headers: {
@@ -19,31 +19,31 @@ const MyWatchList = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.success) {
-            setWatchList(data.data); // Set the fetched watchlist data
+            setWatchList(data.data); // Set the fetched watchList data
           } else {
             console.error(data.message);
           }
           setLoading(false);
         })
         .catch((error) => {
-          console.error("Error fetching watchlist:", error);
+          console.error("Error fetching watchList:", error);
           setLoading(false);
         });
     }
   }, [user]);
 
   if (loading) {
-    return <Spinner/> ;
+    return <Spinner />;
   }
 
   if (!watchList.length) {
-    return <div className="text-center mt-10">Your watchlist is empty.</div>;
+    return <div className="text-center mt-10">Your watchList is empty.</div>;
   }
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
       <h1 className="text-2xl font-bold text-red-600 mb-4 text-center sm:text-left">
-        My Watchlist
+        My watchList
       </h1>
       <div className="rounded-lg shadow-lg bg-white overflow-x-auto">
         <div className="p-4">

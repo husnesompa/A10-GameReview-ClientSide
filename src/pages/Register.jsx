@@ -32,7 +32,7 @@ const Register = () => {
     // Proceed with user creation
     createNewUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         const createAt = result?.user?.metadata?.creationTime;
         const newUser = { name, email, photo, createAt };
 
@@ -44,7 +44,7 @@ const Register = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log('User saved to DB:', data);
+            // console.log('User saved to DB:', data);
             toast.success("Registration successful!");
             navigate('/login');
           });

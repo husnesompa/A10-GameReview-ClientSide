@@ -6,7 +6,7 @@ import {
     onAuthStateChanged,
     signInWithPopup,
     GoogleAuthProvider
-    
+
 } from 'firebase/auth';
 import { auth } from '../firebase/firebase.init';
 import Spinner from '../components/Spinner';
@@ -34,7 +34,7 @@ const AuthProvider = ({ children }) => {
     const signInWithGoogle = async () => {
         setLoading(true);
         try {
-            const result = await signInWithPopup(auth, googleProvider); 
+            const result = await signInWithPopup(auth, googleProvider);
             setUser(result.user);
         } catch (error) {
             console.error("Google Sign-In Error:", error.message);
@@ -71,7 +71,7 @@ const AuthProvider = ({ children }) => {
     };
     return (
         <AuthContext.Provider value={userInfo}>
-            {loading ? <Spinner/>: children}
+            {loading ? <Spinner /> : children}
         </AuthContext.Provider>
     );
 };

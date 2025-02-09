@@ -7,7 +7,6 @@ import Spinner from "../components/Spinner";
 
 const ReviewDetails = () => {
     const { id } = useParams();
-
     const { user } = useContext(AuthContext);
     const [review, setReview] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -16,7 +15,7 @@ const ReviewDetails = () => {
         fetch(`http://localhost:5000/review/${id}`)
             .then((res) => res.json())
             .then((data) => {
-                console.log("Review ID from daata:", id);
+                // console.log("Review ID from data:", id);
                 if (data.success) {
                     setReview(data.data);
                 } else {
@@ -32,7 +31,7 @@ const ReviewDetails = () => {
 
     const handleAddToWatchList = () => {
         if (!user) {
-            toast.error("Please log in to add to the watchlist.");
+            toast.error("Please log in to add to the watch List.");
             return;
         }
 
@@ -53,19 +52,19 @@ const ReviewDetails = () => {
             .then((res) => res.json())
             .then((result) => {
                 if (result.success) {
-                    toast.success("Added to Watchlist!");
+                    toast.success("Added to watch List!");
                 } else {
-                    toast.error("Failed to add to Watchlist.");
+                    toast.error("Failed to add to watch List.");
                 }
             })
             .catch((error) => {
-                console.error("Error adding to watchlist:", error);
+                console.error("Error adding to watch List:", error);
                 toast.error("An error occurred.");
             });
     };
 
     if (loading) {
-        return <Spinner/> ;
+        return <Spinner />;
     }
 
     if (!review) {
