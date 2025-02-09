@@ -6,7 +6,7 @@ const HighestRatedGames = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("http://localhost:5000/highest-rated-games")
+        fetch("https://a10-assignment-game-review-application-server-side.vercel.app/highest-rated-games")
             .then((res) => res.json())
             .then((data) => {
                 if (data.success) {

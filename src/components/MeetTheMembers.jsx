@@ -7,7 +7,7 @@ const MeetTheMembers = () => {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch("http://localhost:5000/users")
+        fetch("https://a10-assignment-game-review-application-server-side.vercel.app/users")
             .then((res) => res.json())
             .then((data) => {
                 if (data && data.data) {

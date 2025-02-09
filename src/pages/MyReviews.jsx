@@ -13,7 +13,7 @@ const MyReviews = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/myReviews?email=${user.email}`, {
+            fetch(`https://a10-assignment-game-review-application-server-side.vercel.app/myReviews?email=${user.email}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("authToken")}`,
                 },
@@ -42,7 +42,7 @@ const MyReviews = () => {
 
 
     const handleUpdateSuccess = () => {
-        fetch(`http://localhost:5000/myReviews?email=${user.email}`, {
+        fetch(`https://a10-assignment-game-review-application-server-side.vercel.app/myReviews?email=${user.email}`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("authToken")}`,
             },
@@ -69,7 +69,7 @@ const MyReviews = () => {
         console.log("deleted id", id);
         const confirmDelete = window.confirm("Are you sure you want to delete this review?");
         if (confirmDelete) {
-            fetch(`http://localhost:5000/review/${id}`, {
+            fetch(`https://a10-assignment-game-review-application-server-side.vercel.app/review/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())

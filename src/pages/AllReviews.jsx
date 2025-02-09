@@ -11,7 +11,7 @@ const AllReviews = () => {
     const [genreFilter, setGenreFilter] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:5000/reviews")
+        fetch("https://a10-assignment-game-review-application-server-side.vercel.app/reviews")
             .then((res) => res.json())
             .then((data) => {
                 if (data.success) {

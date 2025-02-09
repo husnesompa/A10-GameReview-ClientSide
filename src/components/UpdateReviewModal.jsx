@@ -20,7 +20,7 @@ const UpdateReviewModal = ({ review, onClose, onUpdate }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch(`http://localhost:5000/review/${review._id}`, {
+        fetch(`https://a10-assignment-game-review-application-server-side.vercel.app/review/${review._id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

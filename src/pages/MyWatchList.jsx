@@ -11,7 +11,7 @@ const MyWatchList = () => {
   useEffect(() => {
     // Fetch the user's watchList
     if (user) {
-      fetch(`http://localhost:5000/WatchList?email=${user.email}`, {
+      fetch(`https://a10-assignment-game-review-application-server-side.vercel.app/WatchList?email=${user.email}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },

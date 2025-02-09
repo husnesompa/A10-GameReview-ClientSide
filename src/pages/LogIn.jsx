@@ -23,7 +23,7 @@ const LogIn = () => {
         const lastSignInTime = user?.metadata?.lastSignInTime;
         const logInInfo = { email, lastSignInTime };
 
-        return fetch(`http://localhost:5000/users/`, {
+        return fetch(`https://a10-assignment-game-review-application-server-side.vercel.app/users/`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',

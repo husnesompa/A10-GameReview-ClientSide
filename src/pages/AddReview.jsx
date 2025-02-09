@@ -22,7 +22,7 @@ const AddReview = () => {
             userName: user.name,
         };
 
-        fetch("http://localhost:5000/reviews", {
+        fetch("https://a10-assignment-game-review-application-server-side.vercel.app/reviews", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
